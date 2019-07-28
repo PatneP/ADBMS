@@ -1,0 +1,6 @@
+export HADOOP_CLASSPATH=$(hadoop classpath)
+echo $HADOOP_CLASSPATH
+hadoop fs -mkdir /WordCount
+hadoop fs -mkdir /WordCount/input
+hadoop fs -put '/home/panu/ADBMS/Hadoop/Inputdata/input.txt' /WordCount/input
+javac -classpath ${HADOOP_CLASSPATH} -d '/home/panu/ADBMS/Hadoop/Classfiles' '/home/panu/ADBMS/Hadoop/WordCount.java' 
